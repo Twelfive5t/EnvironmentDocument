@@ -1,0 +1,244 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+t"
+        },
+        {
+            "command": "scrollDownPage",
+            "id": "User.scrollDownPage",
+            "keys": "pgdn"
+        },
+        {
+            "command": 
+            {
+                "action": "closeTab"
+            },
+            "id": "User.closeTab.0"
+        },
+        {
+            "command": 
+            {
+                "action": "prevTab"
+            },
+            "id": "User.prevTab.0",
+            "keys": "ctrl+shift+tab"
+        },
+        {
+            "command": "closePane",
+            "id": "User.closePane",
+            "keys": "ctrl+w"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollDown"
+            },
+            "id": "User.scrollDown.0",
+            "keys": "ctrl+shift+down"
+        },
+        {
+            "command": "find",
+            "id": "User.find",
+            "keys": "ctrl+f"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "nextTab"
+            },
+            "id": "User.nextTab.0",
+            "keys": "ctrl+tab"
+        },
+        {
+            "command": 
+            {
+                "action": "openSettings"
+            },
+            "id": "User.openSettings.D3F0B923",
+            "keys": "ctrl+comma"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollUp"
+            },
+            "id": "User.scrollUp.0",
+            "keys": "ctrl+shift+up"
+        },
+        {
+            "command": "scrollUpPage",
+            "id": "User.scrollUpPage",
+            "keys": "pgup"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "alwaysShowNotificationIcon": false,
+    "centerOnLaunch": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "firstWindowPreference": "persistedWindowLayout",
+    "focusFollowMouse": true,
+    "initialRows": 40,
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "autoMarkPrompts": true,
+            "bellStyle": "none",
+			"background": "#282C34",
+			"black": "#3F4451",
+			"blue": "#61AFEF",
+			"brightBlack": "#4F5666",
+			"brightBlue": "#4DC4FF",
+			"brightCyan": "#4CD1E0",
+			"brightGreen": "#A5E075",
+			"brightPurple": "#DE73FF",
+			"brightRed": "#BE5046",
+			"brightWhite": "#E6E6E6",
+			"brightYellow": "#E5C07B",
+			"cursorColor": "#528BFF",
+			"cyan": "#56B6C2",
+			"foreground": "#ABB2BF",
+			"green": "#98C379",
+			"name": "One Dark Pro",
+			"purple": "#C678DD",
+			"red": "#E06C75",
+			"selectionBackground": "#ABB2BF",
+			"white": "#D7DAE0",
+			"yellow": "#D19A66",
+            "font": 
+            {
+                "face": "SauceCodePro Nerd Font"
+            },
+            "historySize": 10000,
+            "padding": "8",
+            "scrollbarState": "visible",
+            "showMarksOnScrollbar": true
+        },
+        "list": 
+        [
+            {
+                "colorScheme": "Tango Dark",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "experimental.rightClickContextMenu": false,
+                "font": 
+                {
+                    "face": "SauceCodePro Nerd Font"
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell",
+                "opacity": 100,
+                "scrollbarState": "visible"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": true,
+                "name": "\u547d\u4ee4\u63d0\u793a\u7b26"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": true,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{7edfc263-80ee-559b-a1c0-bc0fd8b49fcb}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2019 (2)",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{962d03fa-721e-54e8-a9ee-bd01c0603e7d}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2019 (2)",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{dc607f63-8326-52c2-ac04-da361cc1b625}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{7fe738df-5220-53aa-8357-8f05a962f2ff}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "colorScheme": "Tango Dark",
+                "commandline": "D:\\EdgeDownload\\SerialTerminalForWindowsTerminal_Windows_x86_64\\SerialTerminalForWindowsTerminal.exe",
+                "guid": "{71459abe-ec8b-44b8-9519-87f15db9cccd}",
+                "hidden": false,
+                "name": "Serial Port"
+            },
+            {
+                "colorScheme": "Tango Dark",
+                "commandline": "D:\\EdgeDownload\\termscp-v0.16.1-x86_64-pc-windows-msvc\\termscp.exe",
+                "guid": "{40098dda-e20f-4213-943a-8d6ea2bbab3a}",
+                "hidden": false,
+                "name": "Sftp"
+            },
+            {
+                "guid": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
+                "hidden": true,
+                "name": "Ubuntu-24.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "colorScheme": "Tango Dark",
+                "guid": "{acbafd15-cbbb-5bb3-8a61-bed446ff4b83}",
+                "hidden": false,
+                "name": "Ubuntu 24.04 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
+            }
+        ]
+    },
+    "schemes": [],
+    "themes": [],
+    "windowingBehavior": "useExisting"
+}
