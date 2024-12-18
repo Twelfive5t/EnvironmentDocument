@@ -1,0 +1,9 @@
+[experimental]
+autoMemoryReclaim=gradual    # gradual | dropcache | disabled
+dnsTunneling=false           # 禁用 DNS 隧道（不支持的功能）
+firewall=false               # 禁用 Hyper-V 防火墙（不支持的功能）
+autoProxy=true
+
+[wsl2]
+vmSwitch=WSLBridge
+networkingMode=nat       # mirrored | bridged | nat

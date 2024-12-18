@@ -1,0 +1,9 @@
+[experimental]
+autoMemoryReclaim=gradual    # gradual | dropcache | disabled
+dnsTunneling=true
+firewall=true
+autoProxy=true
+
+[wsl2]
+vmSwitch=WSLBridge
+networkingMode=bridged       # mirrored | bridged
