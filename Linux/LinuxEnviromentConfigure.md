@@ -24,9 +24,9 @@
     sudo apt install -y git fakeroot ncurses-dev xz-utils bc
     sudo apt install -y gdb m4 autoconf automake libtool libncurses5-dev build-essential fakeroot
     sudo apt -y install coreutils qemu qemu-user-static python3 device-tree-compiler clang bison flex lld libssl-dev bc genext2fs
-    sudo apt install -y libcurses-dev  ncurses-dev z4
-    sudo apt install -y vim mlocate htop wget  net-tools
-    sudo apt install -y liblwip-dev rt-tests btop bat w3m w3m-img
+    sudo apt install -y libncurses-dev ncurses-dev z4
+    sudo apt install -y vim plocate htop wget net-tools
+    sudo apt install -y liblwip-dev rt-tests btop bat w3m w3m-img
 
 
 ## 添加Root用户
@@ -67,7 +67,7 @@ echo "xxxx" >> ~/.ssh/authorized_keys
     #更新软件源
     sudo apt update && sudo apt upgrade -y
     # 安装 zsh git curl
-    sudo apt install zsh git curl
+    sudo apt install -y zsh git curl
 
     # 切换终端为zsh
     chsh -s /bin/zsh
@@ -239,7 +239,7 @@ https://blog.csdn.net/amoscykl/article/details/80616688?spm=1001.2014.3001.5506
 
 https://blog.csdn.net/zhangpower1993/article/details/52184581?spm=1001.2014.3001.5506
 
-sudo apt install vim universal-ctags
+sudo apt install -y vim universal-ctags
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
