@@ -233,10 +233,12 @@ https://www.cnblogs.com/wsg1100/p/12730720.html
 https://blog.csdn.net/qq_31985307/article/details/130791459
 
 
-https://blog.csdn.net/amoscykl/article/details/80616688?spm=1001.2014.3001.5506
-https://blog.csdn.net/zhangpower1993/article/details/52184581?spm=1001.2014.3001.5506
 
 ## vim
+https://blog.csdn.net/amoscykl/article/details/80616688?spm=1001.2014.3001.5506
+
+https://blog.csdn.net/zhangpower1993/article/details/52184581?spm=1001.2014.3001.5506
+
 sudo apt install vim universal-ctags
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
