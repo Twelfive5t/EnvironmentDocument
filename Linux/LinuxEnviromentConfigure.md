@@ -23,8 +23,9 @@
     sudo apt install -y make cmake gcc g++ flex bison libelf-dev libssl-dev
     sudo apt install -y git fakeroot ncurses-dev xz-utils bc
     sudo apt install -y gdb m4 autoconf automake libtool libncurses5-dev build-essential fakeroot
-    sudo apt -y install coreutils qemu qemu-user-static python3 device-tree-compiler clang bison flex lld libssl-dev bc genext2fs
-    sudo apt install -y libncurses-dev ncurses-dev z4
+    sudo apt install -y coreutils qemu qemu-user-static python3 device-tree-compiler clang bison flex lld libssl-dev bc genext2fs
+    <!-- sudo apt install -y libncurses-dev ncurses-dev z4 -->
+    sudo apt install -y clangd clang-tidy clang-format
     sudo apt install -y vim plocate htop wget net-tools
     sudo apt install -y liblwip-dev rt-tests btop bat w3m w3m-img
 
@@ -209,9 +210,11 @@ https://blog.csdn.net/amoscykl/article/details/80616688?spm=1001.2014.3001.5506
 
 https://blog.csdn.net/zhangpower1993/article/details/52184581?spm=1001.2014.3001.5506
 
-sudo apt install -y vim universal-ctags
+    sudo apt install -y vim universal-ctags
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+    vim ~/.vimrc
 
 > #直接命令行输入vim
 vim
