@@ -187,3 +187,66 @@ ln -s ~/Desktop/nvim-linux64/bin/nvim nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 > 去除git库，后续可自行创建自己的nvim配置库
 rm -rf ~/.config/nvim/.git
+
+### fzf
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+sudo apt install ripgrep
+
+nvim ~/.fzf/shell/key-bindings.zsh
+
+> 添加以下代码
+
+    # fcd - including hidden directories
+    fcd() {
+    local dir
+    dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+    }
+    # fcda - cd into the directory of the selected file
+    fcda() {
+    local file
+    local dir
+    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+    }
+    # cf - fuzzy cd from anywhere
+    # ex: cf word1 word2 ... (even part of a file name)
+    # zsh autoload function
+    fcdf() {
+    local file
+
+    file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+    if [[ -n $file ]]
+    then
+        if [[ -d $file ]]
+        then
+        cd -- $file
+        else
+        cd -- ${file:h}
+        fi
+    fi
+    }
+    # fh - repeat history
+    #fh() {
+    #  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+    #}
+    # fkill - kill processes - list only the ones you can kill. Modified the earlier script.
+    fkill() {
+    local pid
+    if [ "$UID" != "0" ]; then
+        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    else
+        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    fi
+
+    if [ "x$pid" != "x" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+    fi
+    }
+
+
+source ~/.fzf/shell/key-bindings.zsh
+source ~/.fzf/shell/key-bindings.zsh
