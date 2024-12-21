@@ -94,57 +94,7 @@ echo "xxxx" >> ~/.ssh/authorized_keys
 
 ### 修改zsh配置
 
-vim ~/.zshrc
-
-    ###########################################################
-    ZSH_THEME="powerlevel10k/powerlevel10k"
-
-    plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search \
-            zsh-history-substring-search you-should-use zsh-bat\
-    )
-
-
-
-    # 设置代理
-    #proxy ()
-    {
-      export ALL_PROXY="http://10.1.50.43:7897"
-      export HTTP_PROXY="http://10.1.50.43:7897"
-      export HTTPS_PROXY="http://10.1.50.43:7897"
-      export NO_PROXY="localhost,127.0.0.1,.example.com"
-      export all_proxy="http://10.1.50.43:7897"
-      export http_proxy="http://10.1.50.43:7897"
-      export https_proxy="http://10.1.50.43:7897"
-      export no_proxy="localhost,127.0.0.1,.example.com"
-    }
-
-    # 取消代理
-    unproxy ()
-    {
-      unset ALL_PROXY
-      unset HTTP_PROXY
-      unset HTTPS_PROXY
-      unset NO_PROXY
-      unset all_proxy
-      unset http_proxy
-      unset https_proxy
-      unset no_proxy
-    }
-
-
-    # This speeds up pasting w/ autosuggest
-    # https://github.com/zsh-users/zsh-autosuggestions/issues/238
-    pasteinit() {
-      OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-      zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
-    }
-
-    pastefinish() {
-      zle -N self-insert $OLD_SELF_INSERT
-    }
-    zstyle :bracketed-paste-magic paste-init pasteinit
-    zstyle :bracketed-paste-magic paste-finish pastefinit
-    ############################################################
+> #替换.zshrc文件
 > #使zsh配置修改生效
 source ~/.zshrc
 
