@@ -3,32 +3,6 @@
 ## Windows Terminal配置
 notepad $PROFILE
 
-
-    #引入所需模块
-    Import-Module Terminal-Icons
-    Import-Module PSReadLine
-    Import-Module posh-git
-    Import-Module ZLocation
-
-    #初始化 oh-my-posh
-    #oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\easy-term.omp.json" | Invoke-Expression
-    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\powerlevel10k_modern.omp.json" | Invoke-Expression
-
-    #设置编码，避免中文字符乱码
-    $OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
-
-    #Shows navigable menu of all options when hitting Tab
-    Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
-    #Autocompletion for arrow keys
-    Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
-    Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
-
-    #auto suggestions
-    Import-Module PSReadLine
-    Set-PSReadLineOption -PredictionSource History
-
-
 https://github.com/veeso/termscp/tree/v0.16.1
 https://github.com/jixishi/SerialTerminalForWindowsTerminal?tab=readme-ov-file
 https://www.nerdfonts.com/font-downloads

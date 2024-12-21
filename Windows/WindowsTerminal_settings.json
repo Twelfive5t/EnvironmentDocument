@@ -1,30 +1,22 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
-        {
-            "command": 
-            {
-                "action": "newTab"
-            },
-            "id": "User.newTab.5DEADB41",
-            "keys": "ctrl+t"
-        },
         {
             "command": "scrollDownPage",
             "id": "User.scrollDownPage",
             "keys": "pgdn"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "closeTab"
             },
             "id": "User.closeTab.0"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "prevTab"
             },
@@ -32,17 +24,12 @@
             "keys": "ctrl+shift+tab"
         },
         {
-            "command": "closePane",
-            "id": "User.closePane",
-            "keys": "ctrl+w"
-        },
-        {
             "command": "paste",
             "id": "User.paste",
             "keys": "ctrl+v"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "scrollDown"
             },
@@ -51,15 +38,10 @@
         },
         {
             "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+f"
-        },
-        {
-            "command": "find",
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "nextTab"
             },
@@ -67,7 +49,7 @@
             "keys": "ctrl+tab"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "openSettings"
             },
@@ -75,7 +57,7 @@
             "keys": "ctrl+comma"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "scrollUp"
             },
@@ -88,7 +70,7 @@
             "keys": "pgup"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -97,7 +79,7 @@
             "keys": "ctrl+c"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -115,15 +97,15 @@
     "firstWindowPreference": "persistedWindowLayout",
     "focusFollowMouse": true,
     "initialRows": 40,
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "autoMarkPrompts": true,
             "bellStyle": "none",
@@ -148,7 +130,7 @@
 			"selectionBackground": "#ABB2BF",
 			"white": "#D7DAE0",
 			"yellow": "#D19A66",
-            "font": 
+            "font":
             {
                 "face": "SauceCodePro Nerd Font"
             },
@@ -157,13 +139,13 @@
             "scrollbarState": "visible",
             "showMarksOnScrollbar": true
         },
-        "list": 
+        "list":
         [
             {
                 "colorScheme": "Tango Dark",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "experimental.rightClickContextMenu": false,
-                "font": 
+                "font":
                 {
                     "face": "SauceCodePro Nerd Font"
                 },
