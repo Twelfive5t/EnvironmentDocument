@@ -42,7 +42,8 @@
     sudo apt install -y make cmake gcc g++ flex bison libelf-dev libssl-dev
     sudo apt install -y git fakeroot ncurses-dev xz-utils bc
     sudo apt install -y gdb m4 autoconf automake libtool libncurses5-dev build-essential fakeroot
-    sudo apt install -y coreutils qemu qemu-user-static python3 device-tree-compiler clang bison flex lld libssl-dev bc genext2fs
+    sudo apt install -y coreutils qemu qemu-user-static device-tree-compiler clang bison flex lld libssl-dev bc genext2fs
+    sudo apt install -y python3 python3-dev python3-pip python3-setuptools
     sudo apt install -y clangd clang-tidy clang-format
     sudo apt install -y vim plocate htop wget net-tools xclip xsel
     sudo apt install -y liblwip-dev rt-tests btop bat w3m w3m-img
@@ -179,7 +180,7 @@
               password: "fscut@64309023"
               band: 5GHz
               channel: 44
-          optional: true  
+          optional: true
       ethernets:
         eth0:
           dhcp4: yes
