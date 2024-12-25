@@ -1,7 +1,9 @@
 # Windows环境配置
 
 ## Windows Terminal配置
+
 参考$PROFILE
+
 notepad $PROFILE
 
 https://github.com/veeso/termscp/tree/v0.16.1
