@@ -85,4 +85,3 @@
     ```bash
     genhtml coverage.info --output-directory coverage
     ```
-

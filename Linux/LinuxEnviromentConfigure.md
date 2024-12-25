@@ -223,12 +223,10 @@
 
 ## 实时性优化
 
-### 参考链接
+### 实时性参考链接
 
 - [【原创】有利于提高xenomai /PREEMPT-RT 实时性的一些配置建议](https://www.cnblogs.com/wsg1100/p/12730720.html)
 - [【实时性】实时性优化的一些参数设置和心得](https://blog.csdn.net/qq_31985307/article/details/130791459)
-
-
 
 1. 检查是否默认引导到 GUI：
 
@@ -244,7 +242,7 @@
 
 ## Vim 配置
 
-### 参考链接
+### Vim参考链接
 
 - [Vim的终极配置方案，完美的写代码界面! ——.vimrc](https://blog.csdn.net/amoscykl/article/details/80616688?spm=1001.2014.3001.5506)
 - [vim插件管理器：Vundle的介绍及安装（很全）](https://blog.csdn.net/zhangpower1993/article/details/52184581?spm=1001.2014.3001.5506)
@@ -276,7 +274,7 @@
 
 ### Neovim 与 LazyVim
 
-### 参考链接
+### Neovim参考链接
 
 - [neovim github](https://github.com/neovim/neovim)
 - [lazyvim](https://www.lazyvim.org/)
@@ -317,9 +315,8 @@
     nvim ~/.fzf/shell/key-bindings.zsh
     ```
 
-4. 激活配置：
+3. 激活配置：
 
     ```bash
     source ~/.fzf/shell/key-bindings.zsh
     ```
-

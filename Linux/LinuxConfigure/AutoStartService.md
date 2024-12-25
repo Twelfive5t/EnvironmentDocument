@@ -67,4 +67,3 @@
     ```bash
     sudo systemctl status rk3568_auto_start.service
     ```
-
