@@ -1,6 +1,32 @@
 # Windows环境配置
 
 ## Windows Terminal配置
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+
+1. Terminal-Icons
+powershell
+复制代码
+Install-Module -Name Terminal-Icons
+2. PSReadLine
+powershell
+复制代码
+Install-Module -Name PSReadLine
+3. posh-git
+powershell
+复制代码
+Install-Module -Name posh-git
+4. ZLocation
+powershell
+复制代码
+Install-Module -Name ZLocation
+5. oh-my-posh
+powershell
+复制代码
+scoop install oh-my-posh
+
 参考$PROFILE
 notepad $PROFILE
 

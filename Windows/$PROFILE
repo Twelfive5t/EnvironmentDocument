@@ -5,7 +5,6 @@ Import-Module posh-git
 Import-Module ZLocation
 
 # 初始化 oh-my-posh
-#oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\easy-term.omp.json" | Invoke-Expression
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\powerlevel10k_modern.omp.json" | Invoke-Expression
 
 # 设置编码，避免中文字符乱码
@@ -19,6 +18,4 @@ Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 # auto suggestions
-Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
-
