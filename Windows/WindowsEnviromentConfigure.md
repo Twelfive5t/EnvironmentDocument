@@ -2,13 +2,38 @@
 
 ## Windows Terminal配置
 
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+
+1. Terminal-Icons
+powershell
+复制代码
+Install-Module -Name Terminal-Icons
+2. PSReadLine
+powershell
+复制代码
+Install-Module -Name PSReadLine
+3. posh-git
+powershell
+复制代码
+Install-Module -Name posh-git
+4. ZLocation
+powershell
+复制代码
+Install-Module -Name ZLocation
+5. oh-my-posh
+powershell
+复制代码
+scoop install oh-my-posh
+
 参考$PROFILE
 
 notepad $PROFILE
 
-https://github.com/veeso/termscp/tree/v0.16.1
-https://github.com/jixishi/SerialTerminalForWindowsTerminal?tab=readme-ov-file
-https://www.nerdfonts.com/font-downloads
+[查看 termscp v0.16.1 版本](https://github.com/veeso/termscp/tree/v0.16.1)
+[访问 SerialTerminalForWindowsTerminal 项目](https://github.com/jixishi/SerialTerminalForWindowsTerminal?tab=readme-ov-file)
+[下载 Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 
 ## Yazi配置
 
