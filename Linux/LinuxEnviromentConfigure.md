@@ -14,20 +14,7 @@
     sudo vim /etc/apt/sources.list
     ```
 
-3. 更新为阿里云源，文件内容如下：
-
-    ```bash
-    deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
-    deb-src https://mirrors.aliyun.com/debian/ bullseye main non-free contrib
-    deb https://mirrors.aliyun.com/debian-security/ bullseye-security main
-    deb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main
-    deb https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
-    deb-src https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
-    deb https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
-    deb-src https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
-    ```
-
-4. 更新软件源并升级系统：
+3. 更新软件源并升级系统：
 
     ```bash
     sudo apt update -y

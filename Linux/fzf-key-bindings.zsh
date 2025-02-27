@@ -133,10 +133,10 @@ fzf-history-widget() {
   return $ret
 }
 
-# fcd - including hidden directories 
+# fcd - including hidden directories
 fcd() {
-  local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+    local dir
+    dir=$(rg --files --glob '!mnt/*'  --type d | fzf +m) && cd "$dir"
 }
 # fcda - cd into the directory of the selected file
 fcda() {
