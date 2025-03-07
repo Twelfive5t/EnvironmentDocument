@@ -89,7 +89,7 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-	z 
+	z
 	extract web-search
 	zsh-history-substring-search
 	you-should-use
