@@ -1,5 +1,9 @@
 # WSL2 Ubuntu 24.04 安装示例
 
+## 注意事项第一次
+
+- **千万不要修改全局路径下的 glibc 路径！！！**
+
 ## 安装前检查
 
 1. 为了防止安装不可用导致系统崩溃，建议先进行机器检查并备份相关数据。
@@ -61,6 +65,47 @@
     ./download 2.23-0ubuntu11.3_amd64
     ```
 
-## 注意事项
+## 使用 patchelf 修改二进制
+
+1. 查看二进制程序依赖的glibc库及其库版本
+
+    ```bash
+    nm sample_adc | grep GLIBC_
+    ```
+
+2. 通过file查看链接的库.
+
+    ```bash
+    file sample_adc
+    ```
+
+3. 安装patchelf
+
+    ```bash
+    //新建目录
+    git clone https://github.com/NixOS/patchelf.git
+    //进行仓库
+    ./bootstrap.sh
+    (.bootstrap.sh执行报 autoreconf: not found
+    执行sudo apt-get install autoconf automake libtool)
+    ./configure
+    make
+    make check
+    sudo make install
+    ```
+
+4. 以编译后的可执行程序来指定与开发板适配的glibc:以2.25为例:
+
+    ```bash
+    patchelf --set-interpreter  /opt/glibc-2.25/lib/libc.so.6(glibc的文件路经) --set-rpath   /opt/glibc-2.25/lib(glibc的搜索路径)  spi_master(可执行程序)
+    ```
+
+5. 最后通过file确定
+
+    ```bash
+    file sample_adc
+    ```
+
+## 注意事项第二次
 
 - **千万不要修改全局路径下的 glibc 路径！！！**

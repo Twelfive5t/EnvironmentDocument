@@ -42,6 +42,7 @@
 
     ```bash
     sudo apt-get install gcc-11 g++-11
+    sudo apt install gcc-9-aarch64-linux-gnu g++-9-aarch64-linux-gnu
     ```
 
 ## 添加 GCC 版本到 `update-alternatives`
