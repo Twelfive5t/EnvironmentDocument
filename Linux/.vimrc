@@ -201,7 +201,7 @@ set noexpandtab
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
-set number
+" set number
 " 历史记录数
 set history=1000
 "禁止生成临时文件
