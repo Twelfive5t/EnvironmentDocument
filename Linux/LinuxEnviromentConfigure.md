@@ -23,17 +23,74 @@
 
 ## 安装常用工具
 
-1. 安装常用开发工具：
+1. 基础开发工具：
 
     ```bash
-    sudo apt install -y make cmake gcc g++ flex bison libelf-dev libssl-dev
-    sudo apt install -y git fakeroot ncurses-dev xz-utils bc
-    sudo apt install -y gdb m4 autoconf automake libtool libncurses5-dev build-essential fakeroot
-    sudo apt install -y coreutils qemu qemu-user-static device-tree-compiler clang bison flex lld libssl-dev bc genext2fs
+    # 编译构建工具
+    sudo apt install -y build-essential make cmake gcc g++
+    # 版本控制
+    sudo apt install -y git
+    # 自动化构建工具
+    sudo apt install -y autoconf automake libtool m4
+    ```
+
+2. 内核和驱动开发工具：
+
+    ```bash
+    # 内核编译依赖
+    sudo apt install -y libelf-dev libssl-dev fakeroot bc
+    # 设备树编译器
+    sudo apt install -y device-tree-compiler
+    # QEMU模拟器
+    sudo apt install -y qemu qemu-user-static
+    ```
+
+3. 代码分析和调试工具：
+
+    ```bash
+    # 调试工具
+    sudo apt install -y gdb
+    # Clang工具链
+    sudo apt install -y clangd clang-tidy clang-format clang
+    # 词法分析工具
+    sudo apt install -y flex bison
+    ```
+
+4. Python开发环境：
+
+    ```bash
+    # Python3及其开发工具
     sudo apt install -y python3 python3-dev python3-pip python3-setuptools
-    sudo apt install -y clangd clang-tidy clang-format
-    sudo apt install -y vim plocate htop wget net-tools xclip xsel
-    sudo apt install -y liblwip-dev rt-tests btop bat w3m w3m-img
+    ```
+
+5. 系统工具：
+
+    ```bash
+    # 文本编辑器
+    sudo apt install -y vim
+    # 系统监控工具
+    sudo apt install -y htop btop
+    # 文件搜索工具
+    sudo apt install -y plocate
+    # 网络工具
+    sudo apt install -y net-tools wget
+    # 剪贴板工具
+    sudo apt install -y xclip xsel
+    ```
+
+6. 实用工具：
+
+    ```bash
+    # 现代化cat替代品
+    sudo apt install -y bat
+    # 终端浏览器
+    sudo apt install -y w3m w3m-img
+    # 系统信息显示
+    sudo apt install -y neofetch
+    # 实时性测试工具
+    sudo apt install -y rt-tests
+    # lwIP网络协议栈开发
+    sudo apt install -y liblwip-dev
     ```
 
 ## 添加Root用户
