@@ -307,3 +307,25 @@
     ```bash
     source ~/.fzf/shell/key-bindings.zsh
     ```
+
+### tldr 配置
+
+1. 安装 tldr：
+
+    ```bash
+    npm install -g tldr
+    pip install tldr
+    brew install tlrc
+    ```
+
+2. 配置.zshrc：
+
+    ```bash
+    export TLDR_LANGUAGE="zh"
+    ```
+
+3. 更新本地缓存：
+
+    ```bash
+    tldr --update
+    ```
