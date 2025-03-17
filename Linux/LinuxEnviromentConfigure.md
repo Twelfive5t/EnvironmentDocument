@@ -359,9 +359,17 @@
     nvim ~/.fzf/shell/key-bindings.zsh
     ```
 
-3. 激活配置：
+3. 激活配置, 添加到 `~/.fzf.zsh` 中：
 
     ```bash
+    # FZF Configure
+    # CTRL-T    命令行打印选中内容
+    # CTRL-R    命令行历史记录搜索，并打印输出
+    # ALT-C     模糊搜索目录，并进入（cd）
+    export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!mnt/*'"
+    export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+    export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview '[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || batcat --style=numbers --color=always {} | head -500'"
+
     source ~/.fzf/shell/key-bindings.zsh
     ```
 
