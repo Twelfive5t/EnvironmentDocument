@@ -85,3 +85,13 @@
     ```bash
     genhtml coverage.info --output-directory coverage
     ```
+
+## vscode 利用LiveServer插件实时查看html
+
+1. 扩展中安装 LiveServer
+
+2. 安装 wslu 工具
+
+    ```bash
+    apt install wslu
+    ```
