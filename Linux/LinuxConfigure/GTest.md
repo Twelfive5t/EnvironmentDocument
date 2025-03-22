@@ -95,3 +95,69 @@
     ```bash
     apt install wslu
     ```
+
+## 部署 jenkins 自动单元测试
+
+1. 安装 jenkins
+
+    ```bash
+    https://pkg.jenkins.io/debian-stable/
+    ```
+
+2. 配置为root用户，`vim /usr/lib/systemd/system/jenkins.service`
+
+    ```bash
+    User=root
+    Group=root
+    ```
+
+3. 重启服务
+
+    ```bash
+    systemctl daemon-reload
+    systemctl restart jenkins
+    ```
+
+4. 查看密码
+
+    ```bash
+    cat /var/lib/jenkins/secrets/initialAdminPassword
+    ```
+
+## Docker 部署 jenkins 自动单元测试
+
+1. Docker 拉取镜像
+
+    ```bash
+    docker pull twelfive5t/my-jenkins:latest
+    ```
+
+2. 运行镜像
+
+    ```bash
+    docker run --privileged -d --name jenkins \
+        -p 8080:8080 -p 50000:50000 \
+        -v /home/jenkins_data:/var/jenkins_home \
+        -v $(which docker):/usr/bin/docker \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        -v /sys/class/uio/uio0/device:/sys/class/uio/uio0/device \
+        -v /dev/EtherCAT0:/dev/EtherCAT0 \
+        -u 0 \
+        twelfive5t/my-jenkins:latest
+    ```
+
+3. 更新镜像
+
+    ```bash
+    docker stop jenkins
+    docker rm jenkins
+    docker pull twelfive5t/my-jenkins:latest
+    docker images
+    docker rmi ********
+    ```
+
+4. 进入镜像
+
+    ```bash
+    docker exec -it jenkins bash
+    ```
