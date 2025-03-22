@@ -93,6 +93,15 @@
     sudo apt install -y liblwip-dev
     ```
 
+## 系统环境配置
+
+1. 设置系统时区与系统语言
+
+    ```bash
+    sudo timedatectl set-timezone Asia/Shanghai
+    sudo localectl set-locale LANG=en_US.UTF-8
+    ```
+
 ## 添加Root用户
 
 1. 编辑 `sudoers` 文件：
