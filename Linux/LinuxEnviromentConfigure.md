@@ -325,7 +325,7 @@
     :PluginList
     ```
 
-### Neovim 与 LazyVim
+## Neovim 与 LazyVim
 
 ### Neovim参考链接
 
@@ -352,7 +352,7 @@
     rm -rf ~/.config/nvim/.git
     ```
 
-### fzf 配置
+## fzf 配置
 
 1. 安装 fzf：
 
@@ -382,7 +382,7 @@
     source ~/.fzf/shell/key-bindings.zsh
     ```
 
-### tldr 配置
+## tldr 配置
 
 1. 安装 tldr：
 
