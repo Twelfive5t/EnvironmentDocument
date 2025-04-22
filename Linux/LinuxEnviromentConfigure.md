@@ -249,31 +249,6 @@
     netplan apply
     ```
 
-## Docker 配置
-
-1. 安装 Docker：
-
-    ```bash
-    wget -O- https://get.docker.com/ | sh
-    ```
-
-2. 编辑 Docker 配置文件 `/lib/systemd/system/docker.service`，添加代理配置：
-
-    ```bash
-    Environment="ALL_PROXY=http://10.1.50.43:7897"
-    Environment="HTTP_PROXY=http://10.1.50.43:7897"
-    Environment="HTTPS_PROXY=http://10.1.50.43:7897"
-    Environment="NO_PROXY=localhost,127.0.0.1,.example.com"
-    ```
-
-3. 重新加载并重启 Docker：
-
-    ```bash
-    systemctl daemon-reload
-    systemctl restart docker
-    systemctl show --property=Environment docker
-    ```
-
 ## 实时性优化
 
 ### 实时性参考链接
