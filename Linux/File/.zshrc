@@ -86,14 +86,19 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
 plugins=(
-	git
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-	z
-	extract web-search
-	zsh-history-substring-search
-	you-should-use
-	zsh-bat
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-history-substring-search
+  web-search
+  z
+  extract
+  you-should-use
+  zsh-bat
+  zsh-ssh
+  tldr
+  copyfile
+  copypath
 )
 
 
