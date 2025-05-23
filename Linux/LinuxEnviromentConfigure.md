@@ -130,6 +130,7 @@
 
     ```bash
     sudo sed -i '$ a PermitRootLogin yes\n' /etc/ssh/sshd_config
+    sed -i '1i Host *\n  ServerAliveInterval 60\n' ~/.ssh/config
     sudo systemctl restart sshd
     ```
 
