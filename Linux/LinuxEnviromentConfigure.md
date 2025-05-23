@@ -54,6 +54,15 @@
     sudo apt install -y clangd clang-tidy clang-format clang
     # 词法分析工具
     sudo apt install -y flex bison
+    # 安装 clang
+    wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && ./llvm.sh 19 all
+
+    update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-19 100 \
+    && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-19 100 \
+    && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 100 \
+    && update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-19 100 \
+    && update-alternatives --install /usr/bin/run-clang-tidy run-clang-tidy /usr/bin/run-clang-tidy-19 100 \
+    && update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-19 100
     ```
 
 4. Python开发环境：
