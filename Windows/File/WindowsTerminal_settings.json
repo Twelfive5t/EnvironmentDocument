@@ -109,7 +109,7 @@
         {
             "adjustIndistinguishableColors": "indexed",
             "autoMarkPrompts": true,
-            "background": "#282C34",
+            "background": "#23272e",
             "bellStyle": "none",
             "cursorColor": "#ffb6c1",
             "cursorShape": "filledBox",
