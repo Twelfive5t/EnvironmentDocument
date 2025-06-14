@@ -176,7 +176,7 @@ set guioptions-=m           " 隐藏菜单栏
 " 设置在状态行显示的信息
 set foldcolumn=0
 set foldmethod=indent
-set foldlevel=3
+set foldlevel=10
 set foldenable              " 开始折叠
 " 不要使用vi的键盘模式，而是vim自己的
 set nocompatible
