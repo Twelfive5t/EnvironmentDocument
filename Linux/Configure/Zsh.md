@@ -40,5 +40,6 @@ git clone https://github.com/sunlei/zsh-ssh ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 ## 修改 Zsh 配置并使修改生效(见.zshrc)
 
 ```bash
+curl -o ~/.zshrc https://raw.githubusercontent.com/Twelfive5t/EnvironmentDocument/main/Linux/File/.zshrc
 source ~/.zshrc
 ```
