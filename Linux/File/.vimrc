@@ -78,6 +78,15 @@ let NERDTreeWinSize=25      " 设置NERDTree窗口宽度
 nmap <leader>w :w!<cr>      " Leader+w 强制保存
 nmap <leader>f :find<cr>    " Leader+f 查找文件
 
+" 插入模式下光标移动 - Alt+hjkl
+inoremap <M-h> <Left>       " Alt+h 向左移动
+inoremap <M-j> <Down>       " Alt+j 向下移动
+inoremap <M-k> <Up>         " Alt+k 向上移动
+inoremap <M-l> <Right>      " Alt+l 向右移动
+inoremap <M-w> <C-Right>    " Alt+w 向右移动一个单词
+inoremap <M-b> <C-Left>     " Alt+b 向左移动一个单词
+inoremap <M-e> <C-o>e<Right> " Alt+e 移动到单词末尾
+
 " 复制粘贴
 map <C-A> ggVGY             " Ctrl+A 全选并复制
 map! <C-A> <Esc>ggVGY       " 插入模式下 Ctrl+A 全选并复制
