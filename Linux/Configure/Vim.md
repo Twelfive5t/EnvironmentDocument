@@ -33,7 +33,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ### 2. 编辑 `~/.vimrc`，安装插件
 
 ```bash
-vim ~/.vimrc
+curl -o ~/.vimrc https://raw.githubusercontent.com/Twelfive5t/EnvironmentDocument/main/Linux/File/.vimrc
+source ~/.vimrc
 ```
 
 > **提示**：在此步骤中，您应该添加所需的 Vim 配置和插件。可参考下方提供的参考链接。
