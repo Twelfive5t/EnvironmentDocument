@@ -113,6 +113,11 @@ set showmatch               " 高亮显示匹配的括号
 set matchtime=1             " 匹配括号高亮时间（十分之一秒）
 set cmdheight=2             " 命令行高度设为2行
 
+" 光标形状设置
+let &t_SI = "\e[6 q"        " 插入模式：线状光标
+let &t_EI = "\e[2 q"        " 普通模式：块状光标
+let &t_SR = "\e[4 q"        " 替换模式：下划线光标
+
 " 状态栏设置 - 显示文件信息、行列信息、百分比等
 set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 
