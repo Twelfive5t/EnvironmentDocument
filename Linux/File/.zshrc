@@ -123,7 +123,23 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# Alt+w → forward-word（跳到下一个单词开头）
+bindkey "^[w" forward-word
+# Alt+e → emulate Vim 的 e：跳到单词结尾，Zsh 默认没有这个行为，我们自定义
+function forward-word-end() {
+  zle forward-word       # 向前移动到下一个单词开头
+  zle backward-char      # 然后回退一个字符，到达上一个单词的结尾
+}
+zle -N forward-word-end
+bindkey "^[e" forward-word-end
+# Alt+b → backward-word（跳到上一个单词开头）
+bindkey "^[b" backward-word
+
+# 绑定 Alt-h/j/k/l 到方向键
+bindkey "^[h" backward-char    # Alt+h → ←
+bindkey "^[l" forward-char     # Alt+l → →
+bindkey "^[k" up-line-or-history      # Alt+k → ↑
+bindkey "^[j" down-line-or-history    # Alt+j → ↓
 
 # 设置代理
 #proxy ()
