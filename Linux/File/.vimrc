@@ -196,22 +196,3 @@ set viminfo+=!              " 保存全局变量到viminfo文件
 
 " 高亮显示普通txt文件（需要txt.vim脚本）
 au BufRead,BufNewFile *  setfiletype txt
-
-"-----------------------------------------------------------------------------
-" 自动补全括号
-"-----------------------------------------------------------------------------
-:inoremap ( ()<ESC>i        " 输入(时自动补全)并将光标移到中间
-:inoremap ) <c-r>=ClosePair(')')<CR>  " 输入)时智能处理
-:inoremap [ []<ESC>i        " 输入[时自动补全]并将光标移到中间
-:inoremap ] <c-r>=ClosePair(']')<CR>  " 输入]时智能处理
-:inoremap " ""<ESC>i        " 输入"时自动补全"并将光标移到中间
-:inoremap ' ''<ESC>i        " 输入'时自动补全'并将光标移到中间
-
-" 智能括号闭合函数：如果下一个字符是对应的闭合字符，则跳过；否则插入
-function! ClosePair(char)
-	if getline('.')[col('.') - 1] == a:char
-		return "\<Right>"
-	else
-		return a:char
-	endif
-endfunction
