@@ -105,7 +105,6 @@ proxy()
   export http_proxy="http://10.1.61.147:7897"
   export https_proxy="http://10.1.61.147:7897"
   export no_proxy="localhost,127.0.0.1,.example.com"
-  echo "代理已设置: http://10.1.61.147:7897"
 }
 
 # 取消代理
