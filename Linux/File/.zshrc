@@ -96,15 +96,15 @@ bindkey "^[j" down-line-or-history       # Alt+j → ↓
 #===============================================================================
 # 设置代理
 proxy() {
-  export ALL_PROXY="http://10.1.50.43:7897"
-  export HTTP_PROXY="http://10.1.50.43:7897"
-  export HTTPS_PROXY="http://10.1.50.43:7897"
+  export ALL_PROXY="http://10.1.61.147:7897"
+  export HTTP_PROXY="http://10.1.61.147:7897"
+  export HTTPS_PROXY="http://10.1.61.147:7897"
   export NO_PROXY="localhost,127.0.0.1,.example.com"
-  export all_proxy="http://10.1.50.43:7897"
-  export http_proxy="http://10.1.50.43:7897"
-  export https_proxy="http://10.1.50.43:7897"
+  export all_proxy="http://10.1.61.147:7897"
+  export http_proxy="http://10.1.61.147:7897"
+  export https_proxy="http://10.1.61.147:7897"
   export no_proxy="localhost,127.0.0.1,.example.com"
-  echo "代理已设置: http://10.1.50.43:7897"
+  echo "代理已设置: http://10.1.61.147:7897"
 }
 
 # 取消代理
