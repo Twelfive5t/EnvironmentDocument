@@ -63,11 +63,14 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     "-----------------------------------------------------------------------------
     " TagList 配置 - ctags支持，F3快捷键显示程序中的各种tags，包括变量和函数等
     "-----------------------------------------------------------------------------
-    map <F3> :TlistToggle<CR>   " F3快捷键切换TagList
-    let Tlist_Use_Right_Window=1 " 在右侧窗口显示
-    let Tlist_Show_One_File=1   " 只显示当前文件的tags
-    let Tlist_Exit_OnlyWindow=1 " 如果TagList是最后一个窗口，则退出vim
-    let Tlist_WinWidt=25        " 设置TagList窗口宽度
+    if executable('ctags')
+        map <F3> :TlistToggle<CR>   " F3快捷键切换TagList
+        let Tlist_Use_Right_Window=1 " 在右侧窗口显示
+        let Tlist_Show_One_File=1   " 只显示当前文件的tags
+        let Tlist_Exit_OnlyWindow=1 " 如果TagList是最后一个窗口，则退出vim
+        let Tlist_WinWidt=25        " 设置TagList窗口宽度
+        let Tlist_Ctags_Cmd='/usr/bin/ctags' " 指定ctags程序位置
+    endif
 
     "-----------------------------------------------------------------------------
     " NERDTree 配置 - F2快捷键显示当前目录树
@@ -201,6 +204,8 @@ set viminfo+=!              " 保存全局变量到viminfo文件
 
 " 高亮显示普通txt文件（需要txt.vim脚本）
 au BufRead,BufNewFile *  setfiletype txt
+
+" make 设置 - 编译C++程序
 :set makeprg=g++\ -Wall\ \ %
 
 " 高亮显示普通txt文件（需要txt.vim脚本）
