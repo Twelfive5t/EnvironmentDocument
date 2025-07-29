@@ -13,63 +13,68 @@ filetype plugin indent on   " 为特定文件类型载入相关缩进文件
 "-----------------------------------------------------------------------------
 " Vundle 插件管理
 "-----------------------------------------------------------------------------
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'taglist.vim'
-Plugin 'The-NERD-tree'
-Plugin 'indentLine.vim'
-Plugin 'delimitMate.vim'
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'taglist.vim'
+    Plugin 'The-NERD-tree'
+    Plugin 'indentLine.vim'
+    Plugin 'delimitMate.vim'
 
-call vundle#end()
+    call vundle#end()
 
-"-----------------------------------------------------------------------------
-" YouCompleteMe 配置 - 语句补全插件
-"-----------------------------------------------------------------------------
-set runtimepath+=~/.vim/bundle/YouCompleteMe
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif " 离开插入模式后自动关闭预览窗口
-let g:ycm_collect_identifiers_from_tags_files = 1           " 开启 YCM基于标签引擎
-let g:ycm_collect_identifiers_from_comments_and_strings = 1 " 注释与字符串中的内容也用于补全
-let g:syntastic_ignore_files=[".*\.py$"]
-let g:ycm_seed_identifiers_with_syntax = 1                  " 语法关键字补全
-let g:ycm_complete_in_comments = 1                          " 在注释输入中也能补全
-let g:ycm_complete_in_strings = 1                           " 在字符串输入中也能补全
-let g:ycm_confirm_extra_conf = 0                            " 关闭加载.ycm_extra_conf.py提示
-let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']  " 映射按键,没有这个会拦截掉tab
-let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_show_diagnostics_ui = 0                           " 禁用语法检查
-let g:ycm_min_num_of_chars_for_completion=2                 " 从第2个键入字符就开始罗列匹配项
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"     " 回车即选中当前项
-nnoremap <c-j> :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处
+    " 插件相关配置只在 Vundle 存在时加载
+    "-----------------------------------------------------------------------------
+    " YouCompleteMe 配置 - 语句补全插件
+    "-----------------------------------------------------------------------------
+    if isdirectory(expand('~/.vim/bundle/YouCompleteMe'))
+        set runtimepath+=~/.vim/bundle/YouCompleteMe
+        autocmd InsertLeave * if pumvisible() == 0|pclose|endif " 离开插入模式后自动关闭预览窗口
+        let g:ycm_collect_identifiers_from_tags_files = 1           " 开启 YCM基于标签引擎
+        let g:ycm_collect_identifiers_from_comments_and_strings = 1 " 注释与字符串中的内容也用于补全
+        let g:syntastic_ignore_files=[".*\.py$"]
+        let g:ycm_seed_identifiers_with_syntax = 1                  " 语法关键字补全
+        let g:ycm_complete_in_comments = 1                          " 在注释输入中也能补全
+        let g:ycm_complete_in_strings = 1                           " 在字符串输入中也能补全
+        let g:ycm_confirm_extra_conf = 0                            " 关闭加载.ycm_extra_conf.py提示
+        let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']  " 映射按键,没有这个会拦截掉tab
+        let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+        let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+        let g:ycm_show_diagnostics_ui = 0                           " 禁用语法检查
+        let g:ycm_min_num_of_chars_for_completion=2                 " 从第2个键入字符就开始罗列匹配项
+        inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"     " 回车即选中当前项
+        nnoremap <c-j> :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处
+    endif
 
-"-----------------------------------------------------------------------------
-" vim-airline 配置 - 优化vim界面
-"-----------------------------------------------------------------------------
-set t_Co=256
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = ' '
-let g:airline#extensions#tabline#buffer_nr_show = 1
+    "-----------------------------------------------------------------------------
+    " vim-airline 配置 - 优化vim界面
+    "-----------------------------------------------------------------------------
+    set t_Co=256
+    set laststatus=2
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = ' '
+    let g:airline#extensions#tabline#buffer_nr_show = 1
 
-"-----------------------------------------------------------------------------
-" TagList 配置 - ctags支持，F3快捷键显示程序中的各种tags，包括变量和函数等
-"-----------------------------------------------------------------------------
-map <F3> :TlistToggle<CR>   " F3快捷键切换TagList
-let Tlist_Use_Right_Window=1 " 在右侧窗口显示
-let Tlist_Show_One_File=1   " 只显示当前文件的tags
-let Tlist_Exit_OnlyWindow=1 " 如果TagList是最后一个窗口，则退出vim
-let Tlist_WinWidt=25        " 设置TagList窗口宽度
+    "-----------------------------------------------------------------------------
+    " TagList 配置 - ctags支持，F3快捷键显示程序中的各种tags，包括变量和函数等
+    "-----------------------------------------------------------------------------
+    map <F3> :TlistToggle<CR>   " F3快捷键切换TagList
+    let Tlist_Use_Right_Window=1 " 在右侧窗口显示
+    let Tlist_Show_One_File=1   " 只显示当前文件的tags
+    let Tlist_Exit_OnlyWindow=1 " 如果TagList是最后一个窗口，则退出vim
+    let Tlist_WinWidt=25        " 设置TagList窗口宽度
 
-"-----------------------------------------------------------------------------
-" NERDTree 配置 - F2快捷键显示当前目录树
-"-----------------------------------------------------------------------------
-map <F2> :NERDTreeToggle<CR> " F2快捷键切换目录树
-let NERDTreeWinSize=25      " 设置NERDTree窗口宽度
+    "-----------------------------------------------------------------------------
+    " NERDTree 配置 - F2快捷键显示当前目录树
+    "-----------------------------------------------------------------------------
+    map <F2> :NERDTreeToggle<CR> " F2快捷键切换目录树
+    let NERDTreeWinSize=25      " 设置NERDTree窗口宽度
+endif
 
 "-----------------------------------------------------------------------------
 " 键盘映射
@@ -192,6 +197,10 @@ set selectmode=mouse,key    " 选择模式：鼠标和键盘
 set viminfo+=!              " 保存全局变量到viminfo文件
 
 " make 设置 - 编译C++程序
+:set makeprg=g++\ -Wall\ \ %
+
+" 高亮显示普通txt文件（需要txt.vim脚本）
+au BufRead,BufNewFile *  setfiletype txt
 :set makeprg=g++\ -Wall\ \ %
 
 " 高亮显示普通txt文件（需要txt.vim脚本）
