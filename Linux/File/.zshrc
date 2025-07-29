@@ -86,10 +86,10 @@ zle -N forward-word-end
 bindkey "^[e" forward-word-end   # Alt+e → emulate Vim 的 e：跳到单词结尾
 
 # 方向键绑定 (模拟 Vim 风格)
-bindkey "^[h" backward-char              # Alt+h → ←
-bindkey "^[l" forward-char               # Alt+l → →
-bindkey "^[k" up-line-or-history         # Alt+k → ↑
-bindkey "^[j" down-line-or-history       # Alt+j → ↓
+bindkey "^[h" backward-char                    # Alt+h → ←
+bindkey "^[l" forward-char                     # Alt+l → →
+bindkey "^[k" history-substring-search-up      # Alt+k → ↑ (支持子字符串搜索)
+bindkey "^[j" history-substring-search-down    # Alt+j → ↓ (支持子字符串搜索)
 
 #===============================================================================
 # 代理配置函数
