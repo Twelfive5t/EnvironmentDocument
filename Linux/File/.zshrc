@@ -95,7 +95,8 @@ bindkey "^[j" down-line-or-history       # Alt+j → ↓
 # 代理配置函数
 #===============================================================================
 # 设置代理
-proxy() {
+proxy()
+{
   export ALL_PROXY="http://10.1.61.147:7897"
   export HTTP_PROXY="http://10.1.61.147:7897"
   export HTTPS_PROXY="http://10.1.61.147:7897"
