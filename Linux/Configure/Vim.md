@@ -22,10 +22,36 @@
 
 ### 1. 安装 `vim` 和插件
 
-```bash
-# 安装 vim 及 universal-ctags（用于代码标签）
-sudo apt install -y vim universal-ctags
+#### 1.1 检查 Vim 剪贴板支持
 
+在安装前，先检查系统的 Vim 是否支持剪贴板操作：
+
+```bash
+# 检查 Vim 剪贴板支持
+vim --version | grep clipboard
+```
+
+- 如果出现 `+clipboard`，说明支持剪贴板交互
+- 如果出现 `-clipboard`，说明不支持剪贴板交互，需要安装 vim-gtk
+
+#### 1.2 安装 Vim
+
+```bash
+# 如果剪贴板检查显示 "-clipboard"，则安装 vim-gtk 以获得剪贴板支持
+sudo apt install -y vim-gtk universal-ctags
+
+# 如果已经显示 "+clipboard"，则可以安装标准版本
+# sudo apt install -y vim universal-ctags
+
+# 安装完成后再次检查剪贴板支持
+vim --version | grep clipboard
+```
+
+> **重要提示**：确保看到 `+clipboard` 才能在 Vim 中与系统剪贴板进行交互操作（如使用 `"+y` 复制到系统剪贴板，`"+p` 从系统剪贴板粘贴）。
+
+#### 1.3 安装 Vundle 插件管理器
+
+```bash
 # 安装 Vundle 插件管理器
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
