@@ -19,7 +19,10 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
 
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'vim-airline/vim-airline'
-    Plugin 'taglist.vim'
+    " 只有在 ctags 可用时才加载 taglist 插件
+    if executable('ctags')
+        Plugin 'taglist.vim'
+    endif
     Plugin 'The-NERD-tree'
     Plugin 'indentLine.vim'
     Plugin 'delimitMate.vim'
@@ -198,12 +201,6 @@ set mouse=a                 " 启用鼠标支持（所有模式）
 set selection=exclusive     " 选择模式设置
 set selectmode=mouse,key    " 选择模式：鼠标和键盘
 set viminfo+=!              " 保存全局变量到viminfo文件
-
-" make 设置 - 编译C++程序
-:set makeprg=g++\ -Wall\ \ %
-
-" 高亮显示普通txt文件（需要txt.vim脚本）
-au BufRead,BufNewFile *  setfiletype txt
 
 " make 设置 - 编译C++程序
 :set makeprg=g++\ -Wall\ \ %
