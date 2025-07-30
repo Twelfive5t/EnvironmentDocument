@@ -13,6 +13,8 @@ filetype plugin indent on   " 为特定文件类型载入相关缩进文件
 " Leader 键设置
 let mapleader = " "         " 设置 leader 键为空格键
 let g:mapleader = " "       " 全局 leader 键设置
+set timeoutlen=100          " 映射序列等待时间（毫秒）
+set ttimeoutlen=50          " 键码序列等待时间（毫秒）
 "-----------------------------------------------------------------------------
 " Vundle 插件管理
 "-----------------------------------------------------------------------------
@@ -90,7 +92,7 @@ endif
 "-----------------------------------------------------------------------------
 " 基础操作
 nmap <leader>w :w!<cr>      " Leader+w 强制保存
-nmap <leader>f :find<cr>    " Leader+f 查找文件
+nmap <leader>f :find        " Leader+f 查找文件
 
 " 插入模式下光标移动 - Alt+hjkl
 inoremap <Esc>h <Left>
@@ -102,8 +104,7 @@ inoremap <Esc>b <C-Left>     " Alt+b 向左移动一个单词
 inoremap <Esc>e <C-o>e<Right> " Alt+e 移动到单词末尾
 
 " 复制粘贴
-map <C-A> ggVGY             " Ctrl+A 全选并复制
-map! <C-A> <Esc>ggVGY       " 插入模式下 Ctrl+A 全选并复制
+map <C-A> :%y+<CR>          " Ctrl+A 全选并复制到系统剪贴板
 vmap <C-c> "+y              " 选中状态下 Ctrl+c 复制到系统剪贴板
 map <F12> gg=G              " F12 自动格式化整个文件
 
@@ -201,9 +202,16 @@ set wildmenu                " 增强模式的命令行自动补全
 set backspace=2             " 退格键正常处理indent、eol、start
 set whichwrap+=<,>,h,l      " 允许光标键和退格键跨越行边界
 set mouse=a                 " 启用鼠标支持（所有模式）
-set selection=exclusive     " 选择模式设置
+set ttymouse=xterm2         " 设置鼠标类型为xterm2，支持拖拽选择
+set selection=inclusive     " 选择模式设置：包含光标所在字符
 set selectmode=mouse,key    " 选择模式：鼠标和键盘
 set viminfo+=!              " 保存全局变量到viminfo文件
+
+" 命令别名 - 处理常见的大小写误输入
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
 
 " make 设置 - 编译C++程序
 :set makeprg=g++\ -Wall\ \ %
