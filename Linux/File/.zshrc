@@ -40,7 +40,6 @@ plugins=(
   z
   extract
   you-should-use
-  zsh-bat
   zsh-ssh
   tldr
   copyfile
