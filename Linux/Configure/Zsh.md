@@ -10,7 +10,7 @@ sudo apt install -y zsh git curl
 ## 切换终端为 Zsh
 
 ```bash
-chsh -s /bin/zsh
+chsh -s $(which zsh)
 ```
 
 ## 下载 oh-my-zsh 和插件
@@ -40,5 +40,27 @@ git clone https://github.com/sunlei/zsh-ssh ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 
 ```bash
 curl -o ~/.zshrc https://raw.githubusercontent.com/Twelfive5t/EnvironmentDocument/main/Linux/File/.zshrc
+curl -o ~/.p10k.zsh https://raw.githubusercontent.com/Twelfive5t/EnvironmentDocument/main/Linux/File/.p10k.zsh
 source ~/.zshrc
+```
+
+## devcontainer 配置
+
+```dockerfile
+USER root
+
+RUN apt install -y zsh git curl wget
+RUN chsh -s $(which zsh)
+RUN sh -c "$(wget -O- https://install.ohmyz.sh/)"
+
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+RUN git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+RUN git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+RUN git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
+RUN git clone https://github.com/sunlei/zsh-ssh ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-ssh
+
+RUN curl -o ~/.p10k.zsh https://raw.githubusercontent.com/Twelfive5t/EnvironmentDocument/main/Linux/File/.p10k.zsh
+RUN curl -o ~/.zshrc https://raw.githubusercontent.com/Twelfive5t/EnvironmentDocument/main/Linux/File/.zshrc
 ```
