@@ -1,0 +1,6 @@
+# .githooks/post-commit
+#!/bin/bash
+echo "执行 post-commit：自动 git svn dcommit"
+git svn dcommit || {
+    echo "❌ dcommit 失败，请手动执行：git svn dcommit"
+}
