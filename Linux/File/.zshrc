@@ -35,7 +35,6 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-history-substring-search
   web-search
   z
   extract
@@ -44,6 +43,7 @@ plugins=(
   tldr
   copyfile
   copypath
+  zsh-history-substring-search
 )
 
 # 加载 Oh-My-Zsh
@@ -72,23 +72,13 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 #===============================================================================
 # 键盘绑定配置
 #===============================================================================
-# 单词跳转快捷键
-bindkey "^[w" forward-word       # Alt+w → forward-word（跳到下一个单词开头）
-bindkey "^[b" backward-word      # Alt+b → backward-word（跳到上一个单词开头）
+# 使用 Emacs 模式（默认）
+bindkey -e
 
-# 自定义单词结尾跳转
-function forward-word-end() {
-  zle forward-word       # 向前移动到下一个单词开头
-  zle backward-char      # 然后回退一个字符，到达上一个单词的结尾
-}
-zle -N forward-word-end
-bindkey "^[e" forward-word-end   # Alt+e → emulate Vim 的 e：跳到单词结尾
-
-# 方向键绑定 (模拟 Vim 风格)
-bindkey "^[h" backward-char                    # Alt+h → ←
-bindkey "^[l" forward-char                     # Alt+l → →
-bindkey "^[k" history-substring-search-up      # Alt+k → ↑ (支持子字符串搜索)
-bindkey "^[j" history-substring-search-down    # Alt+j → ↓ (支持子字符串搜索)
+bindkey '^[h' backward-kill-word # ALT-H - delete last word
+# ALT-C - cd into the selected directory
+# CTRL-R - Paste the selected command from history into the command line
+# CTRL-T - Paste the selected file path(s) into the command line
 
 #===============================================================================
 # 代理配置函数
