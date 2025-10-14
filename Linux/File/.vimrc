@@ -94,14 +94,22 @@ endif
 nmap <leader>w :w!<cr>      " Leader+w 强制保存
 nmap <leader>f :find        " Leader+f 查找文件
 
-" 插入模式下光标移动 - Alt+hjkl
-inoremap <Esc>h <Left>
-inoremap <Esc>j <Down>
-inoremap <Esc>k <Up>
-inoremap <Esc>l <Right>
-inoremap <Esc>w <C-Right>    " Alt+w 向右移动一个单词
-inoremap <Esc>b <C-Left>     " Alt+b 向左移动一个单词
-inoremap <Esc>e <C-o>e<Right> " Alt+e 移动到单词末尾
+" 插入模式 Emacs 风格快捷键 (Vim Insert)
+" 光标移动
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <Esc>b <C-Left>
+inoremap <Esc>f <C-Right>
+
+" 删除
+inoremap <C-h> <BS>
+inoremap <C-d> <Del>
+inoremap <Esc>h <C-w>
+inoremap <Esc>d <C-o>dw
 
 " 复制粘贴
 map <C-A> :%y+<CR>          " Ctrl+A 全选并复制到系统剪贴板
