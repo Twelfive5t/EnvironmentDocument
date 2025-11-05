@@ -148,6 +148,11 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 # OCaml opam 配置
 [[ ! -r /root/.opam/opam-init/init.zsh ]] || source /root/.opam/opam-init/init.zsh > /dev/null 2> /dev/null
 
+# nvm 配置
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 #===============================================================================
 # 调试结束 (与文件开头的调试配置对应)
 #===============================================================================
