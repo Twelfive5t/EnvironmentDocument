@@ -76,6 +76,8 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 bindkey -e
 
 bindkey '^[h' backward-kill-word # ALT-H - delete last word
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
 # ALT-C - cd into the selected directory
 # CTRL-R - Paste the selected command from history into the command line
 # CTRL-T - Paste the selected file path(s) into the command line
