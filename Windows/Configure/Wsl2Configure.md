@@ -124,3 +124,13 @@
     - 选择“新建虚拟网络交换机”。
     - 选择“外部”，并选择与物理网络连接的网卡，命名为 `WSLBridge`（或其他名称）。
     - 点击“确定”保存。
+
+### WSL2 配置 Podman
+
+```bash
+podman machine ssh podman-machine-default
+vi /etc/wsl.conf
+
+[network]
+generateResolvConf = true
+```
