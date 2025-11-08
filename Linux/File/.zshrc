@@ -34,7 +34,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
   web-search
   z
   extract
@@ -44,6 +43,7 @@ plugins=(
   copyfile
   copypath
   zsh-history-substring-search
+  zsh-syntax-highlighting
 )
 
 # 加载 Oh-My-Zsh
@@ -152,6 +152,18 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#===============================================================================
+# 解决 zsh-syntax-highlighting 和 zsh-history-substring-search 冲突
+#===============================================================================
+# 确保在 zsh-syntax-highlighting 加载后执行
+# 参考: https://github.com/zsh-users/zsh-history-substring-search/issues/52
+zle -N history-substring-search-up
+zle -N history-substring-search-down
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
 
 #===============================================================================
 # 调试结束 (与文件开头的调试配置对应)
