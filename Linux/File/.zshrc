@@ -153,6 +153,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# .NET SDK 配置
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet
+
 #===============================================================================
 # 解决 zsh-syntax-highlighting 和 zsh-history-substring-search 冲突
 #===============================================================================
