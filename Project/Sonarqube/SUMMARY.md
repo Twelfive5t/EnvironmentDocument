@@ -52,10 +52,28 @@
 
 ## 🚀 快速开始
 
+### 0. 环境准备
+
+编辑 /etc/sysctl.conf：
+
+sudo vim /etc/sysctl.conf
+
+加入：
+
+vm.max_map_count=262144
+
+使设置生效：
+
+sudo sysctl -p
+
 ### 1. 启动 SonarQube
 
 ```bash
 cd /opt/sonarqube
+mkdir -p postgresql
+mkdir -p sonarqube
+chmod 777 -R postgresql
+chmod 777 -R sonarqube
 docker compose up -d
 ```
 
@@ -65,8 +83,15 @@ docker compose up -d
 
 ### 3. 配置 CXX 插件
 
+```bash
+mkdir -p sonarqube/extensions/plugins/
+cp sonar-cxx-plugin-2.2.2.1350.jar sonarqube/extensions/plugins/
+docker-compose restart
+```
+
 访问: <http://localhost:9000/admin/settings?category=cxx>
 设置 File suffixes: `.cxx,.cpp,.cc,.c,.hxx,.hpp,.hh,.h`
+![alt text](CXXFileSuffixes.png)
 
 ### 4. 生成扫描 Token
 
