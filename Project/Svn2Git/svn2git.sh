@@ -144,7 +144,7 @@ clone_trunk_only() {
 
     # 设置默认分支为 main
     cd "$REPO_DIR"
-    git symbolic-ref HEAD refs/heads/main
+    git branch -m master main
 
     # 拷贝 authors.txt 到仓库目录
     cp "../$AUTHORS_FILE" .
