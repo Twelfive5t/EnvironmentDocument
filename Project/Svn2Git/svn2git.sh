@@ -150,6 +150,10 @@ clone_trunk_only() {
     cd "$REPO_DIR"
     git branch -m master main
 
+    # 将 SVN trunk 的远程跟踪引用映射到 origin/main，
+    # 避免后续 git svn fetch 将新提交放到 trunk 分支
+    git config svn-remote.svn.fetch "$TRUNK:refs/remotes/origin/main"
+
     # 拷贝 authors.txt 到仓库目录
     cp "../$AUTHORS_FILE" .
     log "   已拷贝 $AUTHORS_FILE 到仓库目录"
