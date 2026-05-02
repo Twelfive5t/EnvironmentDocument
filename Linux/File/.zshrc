@@ -82,24 +82,30 @@ bindkey '^[h' backward-kill-word # ALT-H - delete last word
 #===============================================================================
 # 代理配置函数
 #===============================================================================
-# 设置代理
+PROXY_HOST="10.1.61.147"
+PROXY_PORT="7897"
+PROXY_URL="http://${PROXY_HOST}:${PROXY_PORT}"
+
 proxy()
 {
-  export ALL_PROXY="http://10.1.61.147:7897"
-  export HTTP_PROXY="http://10.1.61.147:7897"
-  export HTTPS_PROXY="http://10.1.61.147:7897"
-  export NO_PROXY="localhost,127.0.0.1,.example.com"
-  export all_proxy="http://10.1.61.147:7897"
-  export http_proxy="http://10.1.61.147:7897"
-  export https_proxy="http://10.1.61.147:7897"
+  local url="${1:-$PROXY_URL}"
+
+  export http_proxy="$url"
+  export https_proxy="$url"
+  export all_proxy="$url"
+
+  export HTTP_PROXY="$url"
+  export HTTPS_PROXY="$url"
+  export ALL_PROXY="$url"
+
   export no_proxy="localhost,127.0.0.1,.example.com"
+  export NO_PROXY="$no_proxy"
 }
 
-# 取消代理
 unproxy() {
-  unset ALL_PROXY HTTP_PROXY HTTPS_PROXY NO_PROXY
-  unset all_proxy http_proxy https_proxy no_proxy
-  echo "代理已取消"
+  unset http_proxy https_proxy all_proxy
+  unset HTTP_PROXY HTTPS_PROXY ALL_PROXY
+  unset no_proxy NO_PROXY
 }
 
 #===============================================================================
