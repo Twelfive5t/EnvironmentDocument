@@ -57,8 +57,7 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
-setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
-setopt SHARE_HISTORY             # Share history between all sessions.
+setopt SHARE_HISTORY             # Share history between all sessions (已包含 INC_APPEND_HISTORY 的立即写入功能).
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
 setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
@@ -76,8 +75,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 bindkey -e
 
 bindkey '^[h' backward-kill-word # ALT-H - delete last word
-bindkey '^P' history-substring-search-up
-bindkey '^N' history-substring-search-down
 # ALT-C - cd into the selected directory
 # CTRL-R - Paste the selected command from history into the command line
 # CTRL-T - Paste the selected file path(s) into the command line
@@ -111,14 +108,12 @@ unproxy() {
 export TLDR_LANGUAGE="zh"
 
 # 编辑器配置 (可根据需要取消注释)
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+fi
 
 # 语言环境 (可根据需要取消注释)
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 #===============================================================================
 # 性能优化配置
