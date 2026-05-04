@@ -25,9 +25,9 @@ Environment="all_proxy=http://10.1.61.147:7897"
 Environment="http_proxy=http://10.1.61.147:7897"
 Environment="https_proxy=http://10.1.61.147:7897"
 Environment="no_proxy=localhost,127.0.0.1,.example.com"
-Environment="ALL_PROXY=http://10.1.50.43:7897"
-Environment="HTTP_PROXY=http://10.1.50.43:7897"
-Environment="HTTPS_PROXY=http://10.1.50.43:7897"
+Environment="ALL_PROXY=http://10.1.61.147:7897"
+Environment="HTTP_PROXY=http://10.1.61.147:7897"
+Environment="HTTPS_PROXY=http://10.1.61.147:7897"
 Environment="NO_PROXY=localhost,127.0.0.1,.example.com"
 ```
 
