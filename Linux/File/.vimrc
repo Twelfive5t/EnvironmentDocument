@@ -6,9 +6,8 @@
 " 基础设置
 "-----------------------------------------------------------------------------
 set nocompatible            " 不兼容vi模式
-filetype on                 " 开启文件类型检测
-filetype plugin on          " 载入文件类型插件
-filetype plugin indent on   " 为特定文件类型载入相关缩进文件
+filetype off                " 纯文本模式：关闭文件类型检测
+syntax off                  " 纯文本模式：关闭语法高亮
 
 " Leader 键设置
 let mapleader = " "         " 设置 leader 键为空格键
@@ -33,6 +32,12 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'delimitMate.vim'
 
     call vundle#end()
+
+    "-----------------------------------------------------------------------------
+    " indentLine 配置 - 禁用字符隐藏
+    "-----------------------------------------------------------------------------
+    let g:indentLine_conceallevel = 0
+    let g:indentLine_concealcursor = ""
 
     " 插件相关配置只在 Vundle 存在时加载
     "-----------------------------------------------------------------------------
@@ -88,6 +93,22 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
 endif
 
 "-----------------------------------------------------------------------------
+" 纯文本模式
+"-----------------------------------------------------------------------------
+filetype off                " 不按扩展名加载文件类型规则
+filetype plugin indent off  " 不加载文件类型插件和缩进脚本
+syntax off                  " 不启用任何语法规则
+set syntax=                 " 清空当前缓冲区语法名
+set conceallevel=0          " 禁用字符隐藏，确保所有字符都显示
+set concealcursor=          " 禁用隐藏光标所在位置的字符
+augroup plain_text_mode
+    autocmd!
+    autocmd BufEnter,BufRead,BufNewFile * syntax off
+    autocmd BufEnter,BufRead,BufNewFile * setlocal filetype= syntax= conceallevel=0 concealcursor=
+    autocmd FileType * setlocal filetype= syntax= conceallevel=0 concealcursor=
+augroup END
+
+"-----------------------------------------------------------------------------
 " 键盘映射
 "-----------------------------------------------------------------------------
 " 基础操作
@@ -135,7 +156,7 @@ autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
 "-----------------------------------------------------------------------------
 " 编辑器外观设置
 "-----------------------------------------------------------------------------
-set syntax=on               " 语法高亮
+syntax off                  " 关闭语法高亮
 set cursorline              " 突出显示当前行
 set ruler                   " 显示状态栏标尺（行号、列号）
 set magic                   " 设置魔术，用于正则表达式
@@ -156,9 +177,9 @@ set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 "-----------------------------------------------------------------------------
 " 缩进和制表符设置
 "-----------------------------------------------------------------------------
-set autoindent              " 自动缩进（新行保持当前行缩进）
-set cindent                 " C程序自动缩进
-set smartindent             " 智能缩进（根据语法智能判断）
+set noautoindent            " 纯文本模式：不自动缩进
+set nocindent               " 纯文本模式：不使用C程序缩进
+set nosmartindent           " 纯文本模式：不按语法智能缩进
 set tabstop=4               " Tab键显示宽度为4个空格
 set softtabstop=4           " 软制表符宽度为4
 set shiftwidth=4            " 自动缩进时使用4个空格
@@ -190,10 +211,18 @@ set helplang=cn             " 帮助文档语言设置为中文
 " 折叠设置
 "-----------------------------------------------------------------------------
 set foldcolumn=0            " 不显示折叠列
-set foldmethod=indent       " 基于缩进进行折叠
-set foldlevel=10            " 打开文件时折叠级别
-set foldenable              " 开启代码折叠功能
+set foldmethod=manual       " 纯文本模式：不按缩进自动折叠
+set foldlevel=99            " 默认展开
+set nofoldenable            " 关闭自动折叠
 
+"-----------------------------------------------------------------------------
+" 字符隐藏设置
+"-----------------------------------------------------------------------------
+set conceallevel=0          " 禁用字符隐藏，确保所有字符都显示
+set concealcursor=          " 禁用隐藏光标所在位置的字符
+
+" 保持所有文件都像纯文本一样显示
+" 具体规则在上方 plain_text_mode augroup 中统一处理。
 "-----------------------------------------------------------------------------
 " 其他实用设置
 "-----------------------------------------------------------------------------
@@ -221,8 +250,5 @@ command! Wq wq
 command! W w
 command! Q q
 
-" make 设置 - 编译C++程序
-:set makeprg=g++\ -Wall\ \ %
-
-" 高亮显示普通txt文件（需要txt.vim脚本）
-au BufRead,BufNewFile *  setfiletype txt
+" 不按文件扩展名设置 filetype，避免重新启用语法或缩进规则
+" 具体规则在上方 plain_text_mode augroup 中统一处理。
