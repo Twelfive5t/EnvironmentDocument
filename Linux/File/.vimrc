@@ -201,11 +201,34 @@ set autoread                " 文件在外部被修改时自动重新载入
 set autowrite               " 切换buffer时自动保存当前文件
 set nobackup                " 不创建备份文件
 set noswapfile              " 不生成交换文件
-set clipboard=unnamed       " 使用系统剪贴板
+set clipboard=unnamedplus   " 优先使用系统剪贴板寄存器
 set enc=utf-8               " 内部编码使用UTF-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936 " 文件编码检测顺序
 set langmenu=zh_CN.UTF-8    " 菜单语言设置为中文
 set helplang=cn             " 帮助文档语言设置为中文
+
+"-----------------------------------------------------------------------------
+" WSL 剪贴板同步
+"-----------------------------------------------------------------------------
+if executable('win32yank.exe') || executable('clip.exe')
+    function! s:copy_yank_to_windows_clipboard() abort
+        if v:event.operator !=# 'y' || v:event.regname ==# '_'
+            return
+        endif
+
+        let l:text = getreg(v:event.regname)
+        if executable('win32yank.exe')
+            call system('win32yank.exe -i --crlf', l:text)
+        else
+            call system('clip.exe', l:text)
+        endif
+    endfunction
+
+    augroup wsl_windows_clipboard
+        autocmd!
+        autocmd TextYankPost * call s:copy_yank_to_windows_clipboard()
+    augroup END
+endif
 
 "-----------------------------------------------------------------------------
 " 折叠设置
