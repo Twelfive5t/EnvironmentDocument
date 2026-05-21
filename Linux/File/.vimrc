@@ -114,6 +114,10 @@ augroup END
 " 基础操作
 nmap <leader>w :w!<cr>      " Leader+w 强制保存
 nmap <leader>f :find        " Leader+f 查找文件
+nnoremap J 5j               " Shift+j 向下移动5行
+nnoremap K 5k               " Shift+k 向上移动5行
+vnoremap J 5jgv             " 可视模式 Shift+j 向下移动5行并保持选区
+vnoremap K 5kgv             " 可视模式 Shift+k 向上移动5行并保持选区
 
 " 插入模式 Emacs 风格快捷键 (Vim Insert)
 " 光标移动
