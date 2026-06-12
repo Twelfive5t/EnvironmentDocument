@@ -95,7 +95,7 @@ source ~/.vimrc
 
 ```bash
 # 下载最新版 Neovim (此处示例版本为 0.11.1，请检查最新版本)
-wget https://github.com/neovim/neovim/releases/download/v0.11.1/nvim-linux-x86_64.tar.gz
+wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 
 # 解压到系统目录
 sudo tar -xzf nvim-linux-x86_64.tar.gz -C /usr/local --strip-components=1
@@ -159,8 +159,8 @@ source ~/.fzf/shell/key-bindings.zsh
 [lazygit](https://github.com/jesseduffield/lazygit) 是一个简单的终端 UI，用于 git 命令，支持键盘快捷操作。
 
 ```bash
-# 下载最新版 lazygit (请检查最新版本)
-LAZYGIT_VERSION="0.50.0"
+# 自动拉取最新版本号+下载安装
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz \
   "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 sudo tar -xzf lazygit.tar.gz -C /usr/local/bin
@@ -173,8 +173,8 @@ lazygit --version
 [fd](https://github.com/sharkdp/fd) 是一个比 `find` 更简单、更快的替代品。
 
 ```bash
-# 下载最新版 fd (请检查最新版本)
-FD_VERSION="10.2.0"
+# 自动拉取最新版本号+下载安装
+FD_VERSION=$(curl -s "https://api.github.com/repos/sharkdp/fd/releases/latest" | grep -Po "\"tag_name\": \"v\K[^\"]*")
 curl -Lo fd.deb \
   "https://github.com/sharkdp/fd/releases/download/v${FD_VERSION}/fd-musl_${FD_VERSION}_amd64.deb"
 sudo dpkg -i fd.deb
@@ -186,8 +186,8 @@ fd --version
 [ripgrep (rg)](https://github.com/BurntSushi/ripgrep) 是一个比 grep 更快的搜索工具，对大型代码库尤其有效。
 
 ```bash
-# 下载最新版 ripgrep (请检查最新版本)
-RG_VERSION="14.1.1"
+# 自动拉取最新版本号+下载安装
+RG_VERSION=$(curl -s "https://api.github.com/repos/BurntSushi/ripgrep/releases/latest" | grep -Po "\"tag_name\": \"\K[^\"]*")
 curl -Lo ripgrep.deb \
   "https://github.com/BurntSushi/ripgrep/releases/download/${RG_VERSION}/ripgrep_${RG_VERSION}-1_amd64.deb"
 sudo dpkg -i ripgrep.deb
