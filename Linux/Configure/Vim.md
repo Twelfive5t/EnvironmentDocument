@@ -111,6 +111,9 @@ rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 
 # 安装 LazyVim 配置
 git clone https://github.com/Twelfive5t/lazyvim.git ~/.config/nvim
+
+# 按 lazy-lock.json 恢复 LazyVim 插件
+nvim --headless "+Lazy! restore" +qa
 ```
 
 ### 2. 工具安装
