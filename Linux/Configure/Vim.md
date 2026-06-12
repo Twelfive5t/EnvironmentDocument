@@ -193,6 +193,19 @@ sudo dpkg -i ripgrep.deb
 rg --version
 ```
 
+#### 2.5 Ubuntu 22.04 安装 tree-sitter
+
+Ubuntu 22.04 建议固定安装 [tree-sitter v0.24.0](https://github.com/tree-sitter/tree-sitter/releases/download/v0.24.0/tree-sitter-linux-x64.gz)，避免最新版兼容性问题。
+
+```bash
+wget -O tree-sitter-linux-x64.gz \
+  https://github.com/tree-sitter/tree-sitter/releases/download/v0.24.0/tree-sitter-linux-x64.gz
+gunzip -f tree-sitter-linux-x64.gz
+chmod +x tree-sitter-linux-x64
+sudo mv tree-sitter-linux-x64 /usr/local/bin/tree-sitter
+tree-sitter --version
+```
+
 ### 3. nvim 配置
 
 #### 3.1 基本配置
