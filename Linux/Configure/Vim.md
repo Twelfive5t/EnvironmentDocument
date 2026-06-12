@@ -149,7 +149,7 @@ nvim ~/.fzf/shell/key-bindings.zsh
 # ALT-C     模糊搜索目录，并进入（cd）
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!mnt/*'"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview '[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || batcat --style=numbers --color=always {} | head -500'"
+export FZF_CTRL_T_OPTS="--preview '[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || batcat --style=numbers --color=always {} | head -500'"
 
 source ~/.fzf/shell/key-bindings.zsh
 ```
