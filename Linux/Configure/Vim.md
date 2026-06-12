@@ -106,15 +106,11 @@ nvim --version
 # 如果需要创建软链接（根据实际情况调整路径）
 # ln -s ~/Desktop/nvim-linux64/bin/nvim /usr/bin/nvim
 
-# 从干净的状态开始（如果需要重新配置）
-rm -rf ~/.config/nvim
-rm -rf ~/.local/share/nvim
-rm -rf ~/.local/state/nvim
-rm -rf ~/.cache/nvim
+# 卸载已有 Neovim 配置和缓存
+rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 
-# 克隆 LazyVim 入门模板
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
+# 安装 LazyVim 配置
+git clone https://github.com/Twelfive5t/lazyvim.git ~/.config/nvim
 ```
 
 ### 2. 工具安装
