@@ -47,11 +47,13 @@ source ~/.zshrc
 ## devcontainer 配置
 
 ```sh
+PROXY=http://10.1.61.147:7897
+
 docker build \
-  --build-arg http_proxy=http://10.1.61.147:7897 \
-  --build-arg https_proxy=http://10.1.61.147:7897 \
-  --build-arg HTTP_PROXY=http://10.1.61.147:7897 \
-  --build-arg HTTPS_PROXY=http://10.1.61.147:7897 \
+  --build-arg http_proxy="${PROXY}" \
+  --build-arg https_proxy="${PROXY}" \
+  --build-arg HTTP_PROXY="${PROXY}" \
+  --build-arg HTTPS_PROXY="${PROXY}" \
   -t harbor.fscut.com/rtos/nozzle-devcontainer:latest \
   -f Dockerfile.devcontainer .
 ```
