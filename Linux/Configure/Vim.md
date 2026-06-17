@@ -206,6 +206,15 @@ sudo mv tree-sitter-linux-x64 /usr/local/bin/tree-sitter
 tree-sitter --version
 ```
 
+#### 2.6 安装 devpod
+
+```bash
+curl -L -o devpod \
+  "https://github.com/loft-sh/devpod/releases/latest/download/devpod-linux-amd64" && \
+sudo install -c -m 0755 devpod /usr/local/bin && \
+rm -f devpod
+```
+
 ### 3. nvim 配置
 
 #### 3.1 基本配置
